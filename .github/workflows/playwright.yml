@@ -25,3 +25,12 @@ jobs:
 
     - name: Run tests
       run: pytest
+
+    - name: Run tests
+      run: pytest --html=report.html
+
+    - name: Upload report
+      uses: actions/upload-artifact@v3
+      with:
+        name: test-report
+        path: report.html
